@@ -1,0 +1,49 @@
+<div class="container">
+    <h2>Add Event</h2>
+    <form [formGroup]="addEventForm" (ngSubmit)="onSubmit()">
+        <!-- Event Name -->
+        <div class="form-group">
+            <label for="name">Event Name</label>
+            <input id="name" type="text" class="form-control" formControlName="name" placeholder="Enter event name" />
+            <div *ngIf="addEventForm.get('name')?.touched && addEventForm.get('name')?.invalid">
+                <small class="text-danger">Event name is required and should be at least 3 characters long.</small>
+            </div>
+        </div>
+
+        <!-- Event Detail -->
+        <div class="form-group">
+            <label for="detail">Event Detail</label>
+            <textarea id="detail" class="form-control" formControlName="detail"
+                placeholder="Enter event details"></textarea>
+            <div *ngIf="addEventForm.get('detail')?.touched && addEventForm.get('detail')?.invalid">
+                <small class="text-danger">Event detail is required and should be at least 10 characters long.</small>
+            </div>
+        </div>
+
+        <!-- Event Category -->
+        <div class="form-group">
+            <label for="category">Event Category</label>
+            <input id="category" type="text" class="form-control" formControlName="category"
+                placeholder="Enter event category" />
+            <div *ngIf="addEventForm.get('category')?.touched && addEventForm.get('category')?.invalid">
+                <small class="text-danger">Event category is required.</small>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary" [disabled]="addEventForm.invalid || isSubmitting">
+            {{ isSubmitting ? 'Submitting...' : 'Add Event' }}
+        </button>
+    </form>
+
+    <!-- Success Message -->
+    <div *ngIf="successMessage" class="alert alert-success mt-3">
+        {{ successMessage }}
+    </div>
+
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+        {{ errorMessage }}
+    </div>
+</div>
+<a href="/home"><button>Back to Home Page</button></a>

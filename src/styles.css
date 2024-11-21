@@ -1,0 +1,79 @@
+/* Global Dark Mode Styling */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark overall background */
+    color: #e0e0e0; /* Light text color for readability */
+    line-height: 1.6;
+}
+
+/* General Links */
+a {
+    color: #76c7c0; /* Soft teal for links */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #4db6ac; /* Brighter teal on hover */
+}
+
+/* Global Buttons */
+button {
+    background-color: #1f1f1f; /* Dark button background */
+    color: #ffffff; /* Light text color */
+    padding: 10px 20px;
+    border: 1px solid #4db6ac; /* Teal border for contrast */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #4db6ac; /* Teal background on hover */
+    color: #121212; /* Dark text on hover */
+}
+
+/* Global Input Fields */
+input, textarea {
+    background-color: #1e1e1e; /* Dark input fields */
+    color: #ffffff; /* Light text */
+    border: 1px solid #4db6ac;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #777777; /* Subtle placeholder text */
+}
+
+input:focus, textarea:focus {
+    border-color: #76c7c0; /* Bright teal on focus */
+}
+
+/* Section and Container Styling */
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: #1f1f1f; /* Slightly lighter dark background */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Subtle depth */
+}
+
+/* Global Headers */
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff; /* Ensure headers are bright */
+    margin-bottom: 10px;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,64 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #121212;
+    color: #e0e0e0;
+    height: 50%; /* Make sure the body takes full height */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Container */
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 83vh; /* Ensure the container takes full height of the viewport */
+    padding: 0px;
+    background: linear-gradient(to right, #1e1e1e, #2c2c2c);
+    overflow: hidden; /* Prevent scrolling within the container */
+}
+
+/* Header Styling */
+.header {
+    text-align: center;
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.header p {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    line-height: 1.5;
+}
+
+/* Add hover effects for a touch of interactivity */
+.header:hover {
+    background-color: #292929;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.header h1:hover {
+    color: #ff9800;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Add responsive typography */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .header p {
+        font-size: 1rem;
+    }
+}

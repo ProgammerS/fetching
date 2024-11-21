@@ -1,0 +1,32 @@
+<div class="container">
+  <!-- Loading Indicator -->
+  <div *ngIf="isLoading" class="loading">
+    <p>Loading events...</p>
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="error">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <!-- Event List -->
+  <div *ngIf="!isLoading && !errorMessage">
+    <h2>Event List</h2>
+    <div *ngIf="events.length > 0; else noEvents">
+      <ul class="event-list">
+        <li *ngFor="let event of events" class="event-item">
+          <h3>{{ event.name }}</h3>
+          <p><strong>Detail:</strong> {{ event.detail }}</p>
+          <p><strong>Category:</strong> {{ event.category }}</p>
+          <p><strong>Date:</strong> {{ formatDate(event.date) }}</p> <!-- Use formatDate method here -->
+        </li>
+      </ul>
+    </div>
+
+    <!-- No Events Fallback -->
+    <ng-template #noEvents>
+      <p>No events found.</p>
+    </ng-template>
+  </div>
+</div>
+<a href="/home"><button>Back to Home Page</button></a>
